@@ -1,19 +1,18 @@
 //Currently learning how to do this. Will post finished file/files.
-using System.Windows.Forms;
+import javax.swing.*;
   
-class MyFirstForm : Form
+//This class has a ''main'' method to launch the frame
+public class FirstFrameTest
 {
-    public MyFirstForm()
-    {
-         this.Text = "My First Form";
-    }
-}
-    
-class MyFirstApp
-{
-     static void Main()
-     {
-          Form form = new myFirstForm();
-          Application.Run(form);
-     }
+  public static void main(String[] args)
+  {
+    //Creates a new FirstFrame object
+    FirstFrame frame = new FirstFrame();
+ 
+    //Defines what happens when the user closes the frame
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  
+    //Displays the frame on the screen
+    frame.setVisible(true);
+  }
 }
