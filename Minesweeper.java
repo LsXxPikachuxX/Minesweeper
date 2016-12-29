@@ -12,6 +12,10 @@ public class Minesweeper{
     int[][] grid = new int[n][n];
     return grid;
   }
-  
+
+  //get the bomb grid based on number of bombs
+  public static int[][] getBombs(int[][] grid,int numBombs){
+    //add code here :)
+  }
   
 }
