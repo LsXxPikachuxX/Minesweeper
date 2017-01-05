@@ -18,6 +18,9 @@ public class Minesweeper{
   //get the bomb grid based on number of bombs
   //Made it so that the 1 would be the x
   //Sorta made it really long tell me if u have a better way to do this
+  
+  //I feel like we should make 9 the bomb, it looks like a bomb and its impossible to get 9 surrounding bombs(max 8)
+  //This is preety code efficient imo, this isnt long at all XD
   public static int[][] getBombs(int[][] grid,int numBombs){
     int[][] ans = new int[grid.length][grid[0].length];
     for(int i = 0; i<numBombs; i++){
@@ -32,5 +35,10 @@ public class Minesweeper{
     return ans;
   }
   
-  
+  //Methods we gotta make:
+  // -method to mark the grid based on bombs, checking for edges as well. lots of testing is needed for this part. I can do this part
+  // -method for actually handling the game(main method, or something else). I can also do this part, or we mite have to work on it 
+  // togather because it would take both our code.
+  // -method for changing the display grid, because we need to change that one constantly
+  // -more methods based on how we gunna do this.
 }
