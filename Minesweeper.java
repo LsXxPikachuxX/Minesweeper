@@ -34,9 +34,84 @@ public class Minesweeper{
     }
     return ans;
   }
+  //BEFORE ANY TRASHING HEAR ME SAY ONE THING
+  //I TRIED MY BEST
+  //oh and this is just in case we dont know how to do it
+  //feel free to replace it with a better one
+  public static int getBombAround(int r, int c, int[][] arr){
+    int ans = 1;
+    if(r == arr.length && c==arr[0].length){
+      ans= checkUp(r-1,c-1,arr)+checkUpLeft(r-1,c-1,arr)+checkLeft(r-1,c-1,arr);
+    }else if(r == 1 && c==arr[0].length){
+      ans= checkLeft(r-1,c-1,arr)+checkDown(r-1,c-1,arr)+checkDownLeft(r-1,c-1,arr);
+    }else if(r == 1 && c==1){
+      ans= checkRight(r-1,c-1,arr)+checkDownRight(r-1,c-1,arr)+checkDown(r-1,c-1,arr);
+    }else if(r == arr.length && c==1){
+      ans= checkUp(r-1,c-1,arr)+checkUpRight(r-1,c-1,arr)+checkRight(r-1,c-1,arr);
+    }else if(r == arr.length){
+      ans= checkUp(r-1,c-1,arr)+checkUpRight(r-1,c-1,arr)+checkRight(r-1,c-1,arr)+checkLeft(r-1,c-1,arr)+checkUpLeft(r-1,c-1,arr);
+    }else if(r == 1){
+      ans= checkLeft(r-1,c-1,arr)+checkDownLeft(r-1,c-1,arr)+checkDown(r-1,c-1,arr)+checkDownRight(r-1,c-1,arr)+checkRight(r-1,c-1,arr);
+    }else if(c == arr[0].length){
+      ans= checkUp(r-1,c-1,arr)+checkUpLeft(r-1,c-1,arr)+checkLeft(r-1,c-1,arr)+checkDownLeft(r-1,c-1,arr)+checkDown(r-1,c-1,arr);
+    }else if(c == 1){
+      ans= checkUp(r-1,c-1,arr)+checkUpRight(r-1,c-1,arr)+checkRight(r-1,c-1,arr)+checkDownRight(r-1,c-1,arr)+checkDown(r-1,c-1,arr);
+    }else{
+      ans= checkUp(r-1,c-1,arr)+checkUpRight(r-1,c-1,arr)+checkRight(r-1,c-1,arr)+checkDownRight(r-1,c-1,arr)+checkDown(r-1,c-1,arr)+checkDownLeft(r-1,c-1,arr)+checkLeft(r-1,c-1,arr)+checkUpLeft(r-1,c-1,arr);
+    }
+    return ans;
+  }
+  public static int checkUp(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r+1][c]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkUpRight(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r+1][c+1]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkRight(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r][c+1]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkDownRight(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r-1][c+1]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkDown(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r-1][c]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkDownLeft(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r-1][c-1]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkLeft(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r][c-1]==1)
+      ans=1;
+    return ans;
+  }
+  public static int checkUpLeft(int r, int c, int[][] arr){
+    int ans = 0;
+    if(arr[r+1][c-1]==1)
+      ans=1;
+    return ans;
+  }
   
   //Methods we gotta make:
-  // -method to mark the grid based on bombs, checking for edges as well. lots of testing is needed for this part. I can do this part
+  // -method to mark the grid based on bombs, checking for edges as well. lots of testing is needed for this part. DID IT
   // -method for actually handling the game(main method, or something else). I can also do this part, or we mite have to work on it 
   // togather because it would take both our code.
   // -method for changing the display grid, because we need to change that one constantly
